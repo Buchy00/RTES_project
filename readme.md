@@ -2,7 +2,7 @@
 
 Real-time embedded parking-assist pipeline on ESP32-S3 (FreeRTOS) with host-side ROS 2 integration.
 
-## What It Does
+## What the project does
 - Embedded pipeline: sensor -> filter -> validation -> decision -> feedback -> UDP send.
 - Host bridge converts raw UDP packets into ROS 2 topics.
 - Dashboards read ROS topics only.
@@ -55,12 +55,3 @@ ros2 topic list
 ros2 topic echo /distance
 ros2 topic echo /parking_state
 ```
-
-## Common Error
-If you get `librmw_fastrtps_cpp.so` import errors:
-
-```bash
-sudo apt update
-sudo apt install -y ros-humble-rmw-fastrtps-cpp
-```
-
