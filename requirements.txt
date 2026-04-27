@@ -1,0 +1,3 @@
+rclpy==9.1.2
+ros_rclpy==9.1.2
+std_msgs==5.3.7
