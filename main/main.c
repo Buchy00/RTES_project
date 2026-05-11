@@ -413,10 +413,10 @@ void app_main(void)
 	s_decision_queue = xQueueCreate(4, sizeof(pipeline_sample_t));
 	s_feedback_queue = xQueueCreate(4, sizeof(pipeline_sample_t));
 
+	xTaskCreate(comm_task, "comm_task", 8192, NULL, 2, NULL);
 	xTaskCreate(sensor_task, "sensor_task", 4096, NULL, 5, NULL);
 	xTaskCreate(filter_task, "filter_task", 4096, NULL, 4, NULL);
 	xTaskCreate(validation_task, "validation_task", 4096, NULL, 3, NULL);
 	xTaskCreate(decision_task, "decision_task", 4096, NULL, 2, NULL);
 	xTaskCreate(feedback_task, "feedback_task", 4096, NULL, 1, NULL);
-	xTaskCreate(comm_task, "comm_task", 8192, NULL, 1, NULL);
 }
